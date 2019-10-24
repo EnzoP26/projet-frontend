@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/79b5a74a-1338-466a-adf4-3d9d42cee6dd/deploy-status)](https://app.netlify.com/sites/frontend-qguichard/deploys)
+
 # Counters
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
