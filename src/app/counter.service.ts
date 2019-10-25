@@ -8,7 +8,6 @@ import { Counter } from './counter';
 })
 export class CounterService {
   public initialValue= [12,6,78];
-  private heroesUrl = 'api/heroes';  // URL to web api
   constructor(private httpClient :HttpClient) { }
   reset(){
     this.initialValue=[0,0,0];
