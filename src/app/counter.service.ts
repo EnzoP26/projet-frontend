@@ -19,6 +19,7 @@ export class CounterService {
   }*/
   increment(id:number): Observable<Counter>{
     this.httpClient.patch(this.url+id+".json",{"value" : 1}).subscribe();
+    this.httpClient.get<Counter>(this.url+id+".json").subscribe(counter => this.value =  counter)
     return this.httpClient.get<Counter>(this.url+id+".json");
   }
   decrement(position: number): number{
