@@ -18,8 +18,9 @@ export class CounterService {
     return this.initialValue[position];
   }*/
    increment(id:number): Observable<Counter>{
-    this.httpClient.patch(this.url+id+".json",{"value" : 1}).subscribe();
-    return this.httpClient.get<Counter>(this.url+id+".json");
+    //this.httpClient.patch(this.url+id+".json",{"value" : 1}).subscribe();
+    //return this.httpClient.get<Counter>(this.url+id+".json");
+     return this.http.patch<Counter>(this.counterUrl + id + '.json', {});
   }
   decrement(position: number): number{
     this.initialValue[position]--;
