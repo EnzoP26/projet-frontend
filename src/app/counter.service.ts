@@ -19,7 +19,7 @@ export class CounterService {
   }*/
    increment(id:number): Observable<Counter>{
     this.httpClient.patch(this.baseUrl+id+".json",{"value" : 1}).subscribe();
-    return this.httpClient.get<Counter>(this.baseUrl+id+".json");
+    return this.httpClient.get<Counter>(this.url+id+".json");
   }
   decrement(position: number): number{
     this.initialValue[position]--;
