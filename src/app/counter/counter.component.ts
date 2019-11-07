@@ -19,7 +19,10 @@ export class CounterComponent implements OnInit {
       .subscribe(counter => this.value =  counter)
   }
   increment(){
-    this.counterService.increment(this.position);
+    //this.counterService.increment(this.position);
+        if(this.position == 1) this.counterService.increment(47).subscribe(counter => this.value = counter);
+        if(this.position == 2) this.counterService.increment(48).subscribe(counter => this.value = counter);
+        if(this.position == 3) this.counterService.increment(51).subscribe(counter => this.value = counter);
   }
   decrement(){
     this.counterService.decrement(this.position);
