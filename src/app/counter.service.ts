@@ -9,12 +9,17 @@ import { Counter } from './counter';
 export class CounterService {
   public initialValue= [12,6,78];
   constructor(private httpClient :HttpClient) { }
+  url = 'https://lp4asgadot.herokuapp.com/counters/'
   reset(){
     this.initialValue=[0,0,0];
   }
-  increment(position: number) : number{
+  /* increment(position: number) : number{
     this.initialValue[position]++;
     return this.initialValue[position];
+  }*/
+   increment(id:number): Observable<Counter>{
+    this.httpClient.patch(this.baseUrl+id+".json",{"value" : 1}).subscribe();
+    return this.httpClient.get<Counter>(this.baseUrl+id+".json");
   }
   decrement(position: number): number{
     this.initialValue[position]--;
