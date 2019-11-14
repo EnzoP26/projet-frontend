@@ -31,6 +31,5 @@ export class NavbarComponent implements OnInit {
         this.counters.push(_counter);
       });
     });
-}
   }
 }
