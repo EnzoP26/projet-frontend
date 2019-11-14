@@ -7,9 +7,10 @@ import { Counter } from './counter';
   providedIn: 'root'
 })
 export class CounterService {
-  public initialValue= [12,6,78];
+  //public initialValue= [12,6,78];
+  url = 'https://lp4asgadot.herokuapp.com/counters/';
   constructor(private httpClient :HttpClient) { }
-  url = 'https://lp4asgadot.herokuapp.com/counters/'
+  
   reset(){
     this.initialValue=[0,0,0];
   }
@@ -20,13 +21,13 @@ export class CounterService {
   increment(id:number): Observable<Counter>{
     return this.httpClient.patch<Counter>(this.url + id + '.json', {});
   }
-  decrement(position: number): number{
+  /*decrement(position: number): number{
     this.initialValue[position]--;
     return this.initialValue[position];
-  }
-  resetOne(position: number): number{
-    this.initialValue[position]=0;
-    return this.initialValue[position];
+  }*/
+  resetOne(position: number){
+   // this.initialValue[position]=0;
+    //return this.initialValue[position];
   }
   /*getCounterValue(id :number) : Observable<Counter>{
     return this.httpClient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json");
@@ -35,6 +36,6 @@ export class CounterService {
     return this.httpClient.get<Counter>(this.url + id + '.json');
   }
   getCounters(): Observable<Counter[]> {
-    return this.httpClient.get<Counter[]>(this.url);
+    return this.httpClient.get<Counter[]>("https://lp4asgadot.herokuapp.com/counters.json");
   }
 }
