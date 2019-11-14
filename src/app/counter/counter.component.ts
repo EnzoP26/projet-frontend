@@ -30,7 +30,6 @@ export class CounterComponent implements OnInit {
       }
     )
   }
-  }
   increment(){
     //this.counterService.increment(this.position);
        /* if(this.position == 1) this.counterService.increment(47).subscribe(counter => this.value = counter);
