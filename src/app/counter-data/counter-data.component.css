@@ -1,6 +1,7 @@
 .counter {
     width: 200px;
     margin: 20px;
+    display: inline-block;
 } 
 h1 {
     color : rgb(12, 193, 209)  ;
