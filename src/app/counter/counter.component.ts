@@ -33,22 +33,20 @@ export class CounterComponent implements OnInit {
   }
   increment(){
     //this.counterService.increment(this.position);
-        if(this.position == 1) this.counterService.increment(47).subscribe(counter => this.value = counter);
+       /* if(this.position == 1) this.counterService.increment(47).subscribe(counter => this.value = counter);
         if(this.position == 2) this.counterService.increment(48).subscribe(counter => this.value = counter);
-        if(this.position == 3) this.counterService.increment(51).subscribe(counter => this.value = counter);
+        if(this.position == 3) this.counterService.increment(51).subscribe(counter => this.value = counter);*/
+        this.counterService.increment(this.counter.id).subscribe(counter => this.counter.value = counter.value);
   }
   decrement(){
-    this.counterService.decrement(this.position);
+    //this.counterService.decrement(this.position);
   }
   resetOne(){
-    this.counterService.resetOne(this.position);
+    //this.counterService.resetOne(this.position);
   }
 
   getOneCounter() {
     this.counter.id = +this.route.snapshot.paramMap.get('id'); 
-    this.counterService.getOneCounter(this.counter.id)
-      .subscribe(counter => {
-        this.counter = counter;
-      });
+    this.counterService.getOneCounter(this.counter.id).subscribe(counter => {this.counter = counter;});
   }
 }
