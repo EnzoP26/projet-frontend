@@ -7,12 +7,12 @@ import { Counter } from './counter';
   providedIn: 'root'
 })
 export class CounterService {
-  //public initialValue= [12,6,78];
+  public initialValue= [0,0,0];
   url = 'https://lp4asgadot.herokuapp.com/counters/';
   constructor(private httpClient :HttpClient) { }
   
   reset(){
-    this.initialValue=[0,0,0];
+    //this.initialValue=[0,0,0];
   }
   /* increment(position: number) : number{
     this.initialValue[position]++;
