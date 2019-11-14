@@ -9,6 +9,16 @@
       <a mat-list-item href="#" routerLink="profile" *ngIf="auth.loggedIn"><b>Profile</b></a>
       <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
       <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+      <a mat-list-item [matMenuTriggerFor]="menu">
+        <b>Counters</b>
+        <mat-icon aria-hidden="false" aria-label="Example home icon">expand_more</mat-icon>
+      </a>
+      <mat-menu #menu="matMenu">
+        <button 
+          mat-menu-item
+          *ngFor='let counter of counters'
+          [routerLink]="'counter/' + counter.id">{{ counter.name }}</button>
+      </mat-menu>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -1,4 +1,2 @@
 <button mat-button (click)= "reset()">Réinitialiser les compteurs</button>
-<app-counter [position] = "1"></app-counter>
-<app-counter [position] = "2"></app-counter>
-<app-counter [position] = "3"></app-counter>
+<app-counter-data *ngFor="let counter of counters" [position]="counter.id"></app-counter-data>
