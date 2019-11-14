@@ -3,11 +3,9 @@
       <mat-card-title>Counters {{counter.name + " " + "#" + counter.id}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        Valeur : {{counter.value}}
-        <p>Crée le: {{ counter.created_at }}</p>
-        <p>Modifié le : {{ counter.updated_at }}</p>
-      </p>
+      <p>Valeur : {{counter.value}}</p>
+      <p>Crée le: {{ counter.created_at }}</p>
+      <p>Modifié le : {{ counter.updated_at }}</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button (click) = "increment()" >Incrémenter</button>
